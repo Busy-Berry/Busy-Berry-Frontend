@@ -1,3 +1,7 @@
+.main {
+  padding-left: 0;
+  transition: all 0.3s ease;
+}
 .main_column {
   width: 68% !important;
 }

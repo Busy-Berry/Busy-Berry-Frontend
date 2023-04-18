@@ -1377,6 +1377,7 @@ ul {
 
 .sidebar-logo {
   height: var(--sidebar-logo-size);
+  width: 100%;
   position: relative;
   padding: 74px 0;
   display: flex;
@@ -1874,9 +1875,9 @@ button#page-header-user-dropdown {
     padding: 4px;
   }
   .sidebar-logo img {
-    width: 70%;
-    height: 70%;
-    margin-left: 30px;
+    width: 100%;
+    height: 100%;
+    // margin-left: 30px;
   }
 }
 

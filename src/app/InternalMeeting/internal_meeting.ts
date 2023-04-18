@@ -85,6 +85,20 @@ export class internalMeeting implements OnInit {
 
   ngOnInit(): void {
     this.getDataFromBackend();
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const sidebarContainer = document.getElementById('sidebar-container');
+    const mainMenu = document.getElementById('main-content');
+    const mainHeader = document.getElementById('main-header');
+    mobileToggle!.addEventListener('click', () => {
+      sidebarContainer!.style.display = 'block';
+
+      setTimeout(() => {
+        mainHeader!.style.paddingLeft = '450px';
+        mainMenu!.style.paddingLeft = '400px';
+        sidebarContainer!.style.left = '0';
+        // sidebarContainer!.style.width = '100%';
+      }, 300);
+    });
   }
 
   //

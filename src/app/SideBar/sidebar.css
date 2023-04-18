@@ -1,0 +1,15 @@
+.sidebar-hidden {
+  /* position: fixed; */
+  left: -100vw;
+  display: none;
+  /* width: 0 !important; */
+  transition: all 0.3s ease;
+  /* position: relative; */
+  z-index: 2;
+}
+
+.image-Logo {
+  height: 90%;
+  width: 90%;
+  padding: 3px;
+}

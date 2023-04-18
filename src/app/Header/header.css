@@ -13,3 +13,8 @@
   background-color: #f6f6f6;
   padding: 3px;
 }
+
+.main-header {
+  padding-left: 20px;
+  z-index: 1;
+}
