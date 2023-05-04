@@ -76,3 +76,46 @@
   color: rgb(153, 56, 56);
   background-color: rgb(219, 115, 115);
 }
+
+.secondRow {
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: start;
+  margin-right: 15px;
+  padding-right: 20px;
+}
+
+.boxGraph {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  max-width: 42%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 15px;
+  padding-left: 85px;
+  padding-right: 85px;
+  font-weight: bold;
+  color: #838384;
+  margin-right: 3%;
+}
+
+.boxGraph div span {
+  font-size: 20px;
+  text-align: center;
+  display: block;
+}
+
+.boxGraph h5 {
+  text-align: center;
+  font-weight: bold;
+  color: #a79bf2;
+  font-size: 24px !important;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}

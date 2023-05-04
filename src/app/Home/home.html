@@ -5,7 +5,7 @@
     <div class="main_row" style="justify-content: center" *ngIf="res != null">
       <div class="col-9 col-xl-12 main_column">
         <div class="box card-box mb-20">
-          <div class="customBox customBox-Top" *ngIf="res.objective != null">
+          <div class="customBox customBox-Top" *ngIf="res.userName != null">
             <div class="columnTop" style="width: 15%">
               <h5 class="title-box name">{{res.userName}}</h5>
               <img
@@ -55,21 +55,94 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="box card-box mb-20">
+        <div class="secondRow">
+          <div class="box card-box mb-20 boxGraph">
+            <h5>Performance</h5>
             <graphRing
               [chartData]="chartData"
               [chartType]="chartType"
               [chartOptions]="chartOptions"
             >
             </graphRing>
+            <div style="margin-top: 20px">
+              <div>
+                <span
+                  ><a style="color: #a79bf2">{{res.userName}}</a>
+                  In recent meetings has had an averageparticipation of
+                  <a style="color: #9b8dff">{{res.participation}}%</a></span
+                >
+              </div>
+
+              <div style="margin-top: 20px">
+                <span
+                  >The average overall stake in his company is
+                  <a style="color: #d9c24e"
+                    >{{res.participationAvgCompany}}%</a
+                  ></span
+                >
+              </div>
+            </div>
           </div>
-          <div class="box card-box mb-20"></div>
+          <div class="box card-box mb-20">
+            <h5 *ngIf="res.meetings" style="margin-bottom: 15px">
+              Upcoming meetings
+            </h5>
+            <div *ngFor="let meet of res.meetings">
+              <div
+                *ngIf="meet.dateFormate && meet.dateFormate.getTime() == today.getTime()"
+              >
+                <span
+                  >Today: {{meet.start_Time}} - {{meet.end_Time}}
+                  <a
+                    style="color: #a79bf2"
+                    *ngIf="meet.description.length <= 50"
+                    >{{ meet.description }}</a
+                  >
+                  <a style="color: #a79bf2" *ngIf="meet.description.length > 50"
+                    >{{ meet.description | slice:0:50 }}...</a
+                  >
+                </span>
+              </div>
+              <div
+                *ngIf="meet.dateFormate && meet.dateFormate.getTime() == tomorrow.getTime()"
+              >
+                <span
+                  >Tomorrow: {{meet.start_Time}} - {{meet.end_Time}}
+                  <a
+                    style="color: #a79bf2"
+                    *ngIf="meet.description.length <= 50"
+                    >{{ meet.description }}</a
+                  >
+                  <a style="color: #a79bf2" *ngIf="meet.description.length > 50"
+                    >{{ meet.description | slice:0:50 }}...</a
+                  >
+                </span>
+                <div
+                  *ngIf="meet.dateFormate && meet.dateFormate.getTime() > tomorrow.getTime()"
+                >
+                  <span>
+                    <a style="color: #d9c24e"> {{meet.dateFormate}} </a>:
+                    {{meet.start_Time}} - {{meet.end_Time}}
+                    <a
+                      style="color: #a79bf2"
+                      *ngIf="meet.description.length <= 50"
+                      >{{ meet.description }}</a
+                    >
+                    <a
+                      style="color: #a79bf2"
+                      *ngIf="meet.description.length > 50"
+                      >{{ meet.description | slice:0:50 }}...</a
+                    >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- END MAIN CONTENT -->
+  <!-- END MAIN CONTENT -->
 
-<div class="overlay"></div>
+  <div class="overlay"></div>
+</div>

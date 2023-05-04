@@ -40,7 +40,7 @@ export class internalMeeting implements OnInit {
         organizer: 'Juan',
         start_Time: '9:00 AM',
         end_Time: '10:00 AM',
-        date: 'Sunday Februry 30, 2025',
+        date: 'Sunday Februry 29, 2025',
         participants: ['Juan', 'Maria', 'pedro'],
         objective: ['Mejorar la calidad de atención al cliente'],
         description:
