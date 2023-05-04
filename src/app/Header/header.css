@@ -18,3 +18,51 @@
   padding-left: 20px;
   z-index: 1;
 }
+
+.dropdownHeader {
+  height: 90px;
+  border-radius: 30px;
+  color: #000000;
+  background-color: #f9fafe;
+  border-color: #6b5ae8;
+}
+
+.dropdownHeader:hover,
+.dropdownHeader:focus,
+.dropdownHeader:active,
+.dropdownHeader.active,
+.open .dropdown-toggle.dropdownHeader {
+  color: #ffffff;
+  background-color: #9b8dff;
+  border-color: #6b5ae8;
+}
+
+.dropdownHeader:active,
+.dropdownHeader.active,
+.open .dropdown-toggle.dropdownHeader {
+  color: #ffffff;
+  background-image: none;
+}
+
+.dropdownHeader.disabled,
+.dropdownHeader[disabled],
+fieldset[disabled] .dropdownHeader,
+.dropdownHeader.disabled:hover,
+.dropdownHeader[disabled]:hover,
+fieldset[disabled] .dropdownHeader:hover,
+.dropdownHeader.disabled:focus,
+.dropdownHeader[disabled]:focus,
+fieldset[disabled] .dropdownHeader:focus,
+.dropdownHeader.disabled:active,
+.dropdownHeader[disabled]:active,
+fieldset[disabled] .dropdownHeader:active,
+.dropdownHeader.disabled.active,
+.dropdownHeader[disabled].active,
+fieldset[disabled] .dropdownHeader.active {
+  border-color: #6b5ae8;
+}
+
+.dropdownHeader .badge {
+  color: #f9fafe;
+  background-color: #000000;
+}

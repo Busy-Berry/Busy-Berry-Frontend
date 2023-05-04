@@ -1,5 +1,5 @@
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'header',
   templateUrl: './header.html',

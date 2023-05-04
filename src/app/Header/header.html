@@ -16,7 +16,8 @@
                             <i class="bx bx-fullscreen"></i>
                         </button>
                 </div> -->
-    <div class="dropdown d-inline-block mt-12">
+
+    <!-- <div class="dropdown d-inline-block mt-12">
       <button
         type="button"
         class="btn header-item waves-effect"
@@ -38,9 +39,9 @@
 
         <i class="bx bx-chevron-down"></i>
       </button>
-      <div class="dropdown-menu dropdown-menu-end">
-        <!-- item-->
-        <a class="dropdown-item d-block" href="#"
+      <div class="dropdown-menu dropdown-menu-end"> -->
+    <!-- item-->
+    <!-- <a class="dropdown-item d-block" href="#"
           ><span class="badge bg-success float-end">11</span
           ><i class="bx bx-wrench font-size-16 align-middle me-1"></i>
           <span>Settings</span></a
@@ -52,6 +53,44 @@
           ></i>
           <span>Logout</span></a
         >
+      </div>
+    </div> -->
+
+    <div class="row dropdown d-inline-block mt-12">
+      <div class="col">
+        <a class="pulse-css"></a>
+        <div ngbDropdown class="d-inline-block">
+          <button
+            type="button"
+            class="btn header-item waves-effect dropdownHeader"
+            id="dropdownBasic1"
+            ngbDropdownToggle
+          >
+            <div class="row">
+              <img
+                class="rounded-circle header-profile-user"
+                src="https://thumbs.dreamstime.com/b/retrato-masculino-del-icono-del-perfil-del-hombre-de-negocios-plano-47075259.jpg"
+                alt="Header Avatar"
+              />
+
+              <div class="col">
+                <div>Randy Riley</div>
+                <div>randy.riley@gmail.com</div>
+              </div>
+            </div>
+
+            <!-- Toggle dropdown -->
+          </button>
+
+          <div
+            ngbDropdownMenu
+            aria-labelledby="dropdownBasic1"
+            class="mt-12 w-100"
+          >
+            <button ngbDropdownItem>Settings</button>
+            <button ngbDropdownItem>LogOut</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

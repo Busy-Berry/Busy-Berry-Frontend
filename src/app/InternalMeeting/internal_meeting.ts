@@ -20,14 +20,20 @@ export class internalMeeting implements OnInit {
     headers = headers.append('Content-Type', 'application/json');
     headers = headers.append('Accept', '*/*');
     const requestOptions = { headers: headers, params: params };
-    this.http
-      .get<any>(
-        'https://i43ng2dyfi.execute-api.us-east-1.amazonaws.com/default/get_specific_meet',
-        requestOptions
-      )
-      .subscribe((datos) => {
-        this.res = datos;
-      });
+    try {
+      console.log('hola');
+      this.http
+        .get<any>(
+          'https://i43ng2dyfi.execute-api.us-east-1.amazonaws.com/default/get_specific_meet',
+          requestOptions
+        )
+        .subscribe((datos) => {
+          this.res = datos;
+        });
+    } catch (error) {
+      console.log('error: ', error);
+    }
+
     if (this.res == null) {
       console.log('error peticion, asignar valores defecto');
       this.res = {

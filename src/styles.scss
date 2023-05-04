@@ -1276,6 +1276,7 @@ ul {
 }
 
 .pulse-css {
+  z-index: 12;
   width: 1rem;
   height: 1rem;
   border-radius: 0.5rem;
@@ -1283,14 +1284,15 @@ ul {
   height: 1rem;
   position: absolute;
   background: #00bc8b;
-  left: 58px;
-  bottom: 18px;
+  left: 53px;
+  bottom: 30px;
   width: 1rem;
   border: 2px solid #fff;
 }
 
 .pulse-css:after,
 .pulse-css:before {
+  z-index: 10;
   content: "";
   width: 1rem;
   height: 1rem;
@@ -2786,6 +2788,7 @@ button.search i {
 }
 
 .box.client .img-box .pulse-css {
+  z-index: 9;
   left: 79px;
   bottom: 12px;
   background: #3c21f7;
@@ -2795,6 +2798,7 @@ button.search i {
 
 .box.client .img-box .pulse-css:after,
 .box.client .img-box .pulse-css:before {
+  z-index: 9;
   background-color: var(--main-color);
 }
 
@@ -3875,7 +3879,7 @@ a.btn.ripple.btn-outline-light.dropdown-toggle.fs-12 {
   box-shadow: none;
 }
 
-.dropdown-menu > li > a {
+.dropdown-menu > div > button {
   display: block;
   padding: 0.5rem 1.5rem;
   clear: both;
@@ -4194,6 +4198,7 @@ input.custom-control-input {
 }
 
 .pulse-css-1 {
+  z-index: 11;
   width: 15px;
   height: 15px;
   border-radius: 50%;
