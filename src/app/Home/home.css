@@ -1,0 +1,78 @@
+.columnTop .name {
+  text-align: start !important;
+  font-size: 22px !important;
+}
+
+.customBox-Top {
+  padding: 1vh 2vw;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.profile-user {
+  height: 120px;
+  width: 120px;
+  background-color: #f6f6f6;
+  padding: 3px;
+}
+.columnTop {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  width: 40%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: start;
+  margin-right: 15px;
+  padding-right: 20px;
+}
+
+.customBox-Top h3 {
+  text-align: start;
+  color: #a79bf2;
+  font-size: 18px !important;
+  /* margin-bottom: 10px; */
+  line-height: 1.5;
+  width: 35%;
+}
+.customBox-Top p {
+  width: 70%;
+  text-align: start;
+  color: #838384;
+  font-size: 18px !important;
+  /* margin-bottom: 6px; */
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 5px;
+}
+.customBox-Top .row {
+  width: 100%;
+}
+
+.rounded-box {
+  border-radius: 40px;
+  min-width: 80px;
+  display: inline-block;
+  /* width: 50px; */
+  height: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.active {
+  padding-top: 5px;
+  color: rgb(41, 155, 41);
+  background-color: rgb(212, 255, 212);
+}
+
+.inactive {
+  font-size: 13px;
+  padding-top: 5px;
+  color: rgb(153, 56, 56);
+  background-color: rgb(219, 115, 115);
+}

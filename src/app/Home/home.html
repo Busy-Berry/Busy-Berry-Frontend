@@ -1,0 +1,75 @@
+<header></header>
+<sidebar></sidebar>
+<div class="main" id="main-content">
+  <div class="main-content user">
+    <div class="main_row" style="justify-content: center" *ngIf="res != null">
+      <div class="col-9 col-xl-12 main_column">
+        <div class="box card-box mb-20">
+          <div class="customBox customBox-Top" *ngIf="res.objective != null">
+            <div class="columnTop" style="width: 15%">
+              <h5 class="title-box name">{{res.userName}}</h5>
+              <img
+                class="rounded-circle profile-user"
+                src="https://thumbs.dreamstime.com/b/retrato-masculino-del-icono-del-perfil-del-hombre-de-negocios-plano-47075259.jpg"
+                alt="Header Avatar"
+              />
+            </div>
+            <div class="columnTop">
+              <div class="row">
+                <h3>User ID:</h3>
+                <p>#{{res.userId}}</p>
+              </div>
+              <div class="row">
+                <h3>Email:</h3>
+                <p>{{res.email}}</p>
+              </div>
+              <div class="row">
+                <h3>Number:</h3>
+                <p>{{res.number}}</p>
+              </div>
+            </div>
+            <div class="columnTop">
+              <div class="row">
+                <h3>Gender:</h3>
+                <p>{{res.gender}}</p>
+              </div>
+              <div class="row">
+                <h3>Language:</h3>
+                <p>{{res.language}}</p>
+              </div>
+              <div class="row">
+                <h3>Company:</h3>
+                <p>{{res.company}}</p>
+              </div>
+            </div>
+            <div class="columnTop" style="width: 10%; align-items: center">
+              <h3 style="text-align: center !important; width: 100%">
+                status:
+              </h3>
+              <div
+                [ngClass]="res.isActive ? 'active' : 'inactive'"
+                class="rounded-box"
+              >
+                <a>{{res.isActive ? 'ACTIVE' : 'INACTIVE'}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="box card-box mb-20">
+            <graphRing
+              [chartData]="chartData"
+              [chartType]="chartType"
+              [chartOptions]="chartOptions"
+            >
+            </graphRing>
+          </div>
+          <div class="box card-box mb-20"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END MAIN CONTENT -->
+
+<div class="overlay"></div>
