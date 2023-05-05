@@ -10,6 +10,7 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { homeComponent } from './Home/home';
 import { NgChartsModule } from 'ng2-charts';
 import { AnilloComponent } from './Graph/Ring/graph_ring';
+import { appComponent } from './app-component';
 @NgModule({
   declarations: [
     internalMeeting,
@@ -17,6 +18,7 @@ import { AnilloComponent } from './Graph/Ring/graph_ring';
     header,
     homeComponent,
     AnilloComponent,
+    appComponent,
   ],
   imports: [
     HttpClientModule,
@@ -26,6 +28,6 @@ import { AnilloComponent } from './Graph/Ring/graph_ring';
     NgChartsModule,
   ],
   providers: [],
-  bootstrap: [homeComponent],
+  bootstrap: [appComponent],
 })
 export class AppModule {}
