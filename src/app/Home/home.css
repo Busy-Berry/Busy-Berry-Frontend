@@ -4,6 +4,7 @@
 }
 
 .customBox-Top {
+  border: 0ch;
   padding: 1vh 2vw;
   align-items: center;
   display: flex;
