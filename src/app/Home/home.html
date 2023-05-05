@@ -83,59 +83,36 @@
               </div>
             </div>
           </div>
-          <div class="box card-box mb-20">
+          <div class="box card-box mb-20 upcoming">
             <h5 *ngIf="res.meetings" style="margin-bottom: 15px">
               Upcoming meetings
             </h5>
-            <div *ngFor="let meet of res.meetings">
-              <div
-                *ngIf="meet.dateFormate && meet.dateFormate.getTime() == today.getTime()"
-              >
-                <span
-                  >Today: {{meet.start_Time}} - {{meet.end_Time}}
-                  <a
+            <div *ngFor="let meet of res.meetings.slice(0, 4); let i=index">
+              <div *ngIf="meet.validationDate" class="meetSlide">
+                <a
+                  ><ng-container
+                    *ngIf="meet.validationDate != 'Today:' && meet.validationDate != 'Tomorrow:'; else noStyle"
+                  >
+                    <a style="color: #d9c24e">{{meet.validationDate}}</a>
+                  </ng-container>
+
+                  <ng-template #noStyle>
+                    <a>{{meet.validationDate}}</a>
+                  </ng-template>
+                  {{meet.start_Time}} - {{meet.end_Time}}
+                  <span
                     style="color: #a79bf2"
-                    *ngIf="meet.description.length <= 50"
-                    >{{ meet.description }}</a
+                    *ngIf="meet.description.length <= 60"
+                    >{{ meet.description }}</span
                   >
-                  <a style="color: #a79bf2" *ngIf="meet.description.length > 50"
-                    >{{ meet.description | slice:0:50 }}...</a
-                  >
-                </span>
-              </div>
-              <div
-                *ngIf="meet.dateFormate && meet.dateFormate.getTime() == tomorrow.getTime()"
-              >
-                <span
-                  >Tomorrow: {{meet.start_Time}} - {{meet.end_Time}}
-                  <a
+                  <span
                     style="color: #a79bf2"
-                    *ngIf="meet.description.length <= 50"
-                    >{{ meet.description }}</a
+                    *ngIf="meet.description.length > 60"
+                    >{{ meet.description | slice:0:60 }}...</span
                   >
-                  <a style="color: #a79bf2" *ngIf="meet.description.length > 50"
-                    >{{ meet.description | slice:0:50 }}...</a
-                  >
-                </span>
-                <div
-                  *ngIf="meet.dateFormate && meet.dateFormate.getTime() > tomorrow.getTime()"
-                >
-                  <span>
-                    <a style="color: #d9c24e"> {{meet.dateFormate}} </a>:
-                    {{meet.start_Time}} - {{meet.end_Time}}
-                    <a
-                      style="color: #a79bf2"
-                      *ngIf="meet.description.length <= 50"
-                      >{{ meet.description }}</a
-                    >
-                    <a
-                      style="color: #a79bf2"
-                      *ngIf="meet.description.length > 50"
-                      >{{ meet.description | slice:0:50 }}...</a
-                    >
-                  </span>
-                </div>
+                </a>
               </div>
+              <ng-container *ngIf="i < 3"><hr /></ng-container>
             </div>
           </div>
         </div>

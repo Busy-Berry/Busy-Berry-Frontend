@@ -119,3 +119,28 @@
   margin-bottom: 20px;
   line-height: 1.5;
 }
+
+.upcoming {
+  font-weight: bold;
+  color: #838384;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+
+  text-align: center;
+}
+
+.upcoming h5 {
+  text-align: center;
+  font-weight: bold;
+  color: #a79bf2;
+  font-size: 24px !important;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.meetSlide {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}

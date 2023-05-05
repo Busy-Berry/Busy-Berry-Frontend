@@ -16,6 +16,7 @@ export class homeComponent implements OnInit {
   chartOptions: any;
   today: Date = new Date();
   tomorrow = new Date(this.today.getTime() + 24 * 60 * 60 * 1000);
+
   getDataFromBackend() {
     let params = new HttpParams();
     params = params.append('doc_id', this.body.doc_id);
@@ -102,78 +103,257 @@ export class homeComponent implements OnInit {
             ],
           },
           {
-            organizer: 'Pedro',
-            start_Time: '11:00 AM',
-            end_Time: '2:00 PM',
-            date: 'Sunday May 5, 2025',
-            participants: ['Maria', 'pedro'],
-            objective: ['Mejorar la calidad de atención al cliente'],
+            organizer: 'Ana',
+            start_Time: '2:00 PM',
+            end_Time: '4:00 PM',
+            date: 'Saturday March 15, 2025',
+            participants: ['Ana', 'Carlos', 'Sofia', 'Manuel'],
+            objective: ['Desarrollar nuevas estrategias de marketing'],
             description:
-              'Se implementación de nuevas herramientas tecnológicas.',
+              'El objetivo es discutir y desarrollar nuevas estrategias de marketing para aumentar las ventas y la rentabilidad de la empresa.',
             summary:
-              'El objetivo e alsdalsdadajosdasdiahnosinasodasdo aiosjdoasnd oknd nq n o nokansdo  n okfnda oción y la implementación de herramientas tecnológicas.',
+              'El objetivo es desarrollar nuevas estrategias de marketing para aumentar las ventas y la rentabilidad de la empresa.',
             commitments: [
               {
-                assigned_to: 'María',
+                assigned_to: 'Carlos',
                 asignament:
-                  'Nos comprometemos a capacitar a nuestro personal en técnicas de atención al cliente y a implementar nuevas herramientas tecnológicas para mejorar la eficiencia y la satisfacción del cliente.',
+                  'Nos comprometemos a investigar sobre el mercado y la competencia para tener una mejor idea de lo que se está haciendo y lo que podemos hacer mejor.',
               },
               {
-                assigned_to: 'pedro',
+                assigned_to: 'Sofia',
                 asignament:
-                  'Nos compromeasdasdqwed qw eqwdas f sumen puntual donde se exprese lo mas preocupante de nuestro equipo',
+                  'Nos comprometemos a desarrollar una campaña de publicidad efectiva para dar a conocer nuestros productos y servicios a nuestro público objetivo.',
+              },
+              {
+                assigned_to: 'Manuel',
+                asignament:
+                  'Nos comprometemos a mejorar la experiencia del cliente para que regresen a nosotros y recomienden nuestros productos y servicios.',
               },
             ],
             transcription: [
               {
                 minute: 1,
-                speaker: 'Pedro',
+                speaker: 'Ana',
                 speak:
-                  'Buenos días a todos, hoy nos reunimos para discutir cómo mejorar la calidad de atención al cliente.',
+                  'Bienvenidos a esta reunión para discutir y desarrollar nuevas estrategias de marketing.',
               },
               {
                 minute: 3,
-                speaker: 'María',
+                speaker: 'Carlos',
                 speak:
-                  'Propongo que empecemos por capacitar a nuestro personal en técnicas de atención al cliente.',
+                  'Propongo que empecemos por investigar sobre el mercado y la competencia para tener una mejor idea de lo que se está haciendo y lo que podemos hacer mejor.',
               },
               {
                 minute: 5,
-                speaker: 'Pedro',
+                speaker: 'Sofia',
                 speak:
-                  'Estoy de acuerdo con María, pero también deberíamos implementar nuevas herramientas tecnológicas para mejorar la eficiencia.',
+                  'Estoy de acuerdo con Carlos, pero también deberíamos desarrollar una campaña de publicidad efectiva para dar a conocer nuestros productos y servicios a nuestro público objetivo.',
               },
               {
                 minute: 8,
-                speaker: 'María',
+                speaker: 'Manuel',
                 speak:
                   'Me parece una buena idea. ¿Alguien tiene alguna sugerencia específica?',
               },
             ],
           },
+          {
+            organizer: 'Laura',
+            start_Time: '2:30 PM',
+            end_Time: '4:00 PM',
+            date: 'Friday June 12, 2026',
+            participants: ['Laura', 'David', 'Sophie', 'Michael'],
+            objective: ['Evaluar el desempeño del equipo'],
+            description:
+              'La reunión tiene como objetivo evaluar el desempeño del equipo en el último trimestre y establecer medidas para mejorar la productividad.',
+            summary:
+              'El objetivo es evaluar el desempeño del equipo en el último trimestre y establecer medidas para mejorar la productividad.',
+            commitments: [
+              {
+                assigned_to: 'David',
+                asignament:
+                  'Me comprometo a desarrollar un plan de capacitación para mejorar las habilidades del equipo.',
+              },
+              {
+                assigned_to: 'Sophie',
+                asignament:
+                  'Me comprometo a revisar los procesos y hacer recomendaciones para optimizar el flujo de trabajo.',
+              },
+              {
+                assigned_to: 'Michael',
+                asignament:
+                  'Me comprometo a establecer un sistema de seguimiento para monitorear el progreso del equipo.',
+              },
+            ],
+            transcription: [
+              {
+                minute: 1,
+                speaker: 'Laura',
+                speak:
+                  'Bienvenidos a esta reunión de evaluación del desempeño del equipo. Gracias por su tiempo.',
+              },
+              {
+                minute: 3,
+                speaker: 'David',
+                speak:
+                  'Quiero empezar diciendo que creo que hemos hecho un buen trabajo en el último trimestre, pero siempre hay espacio para mejorar.',
+              },
+              {
+                minute: 6,
+                speaker: 'Sophie',
+                speak:
+                  'Estoy de acuerdo con David. Me gustaría revisar los procesos para ver si hay formas de optimizar el flujo de trabajo.',
+              },
+              {
+                minute: 9,
+                speaker: 'Michael',
+                speak:
+                  'También me gustaría establecer un sistema de seguimiento para monitorear el progreso del equipo.',
+              },
+              {
+                minute: 12,
+                speaker: 'Laura',
+                speak:
+                  'Excelente, entonces podemos asignar estas tareas y reunirnos nuevamente en un mes para ver cómo hemos progresado.',
+              },
+            ],
+          },
+          {
+            organizer: 'Karen',
+            start_Time: '10:00 AM',
+            end_Time: '11:00 AM',
+            date: 'Saturday May 6, 2023',
+            participants: ['Karen', 'Sofia', 'John', 'Lucas'],
+            objective: ['Planificar el lanzamiento del nuevo producto'],
+            description:
+              'En esta reunión, discutiremos los detalles del lanzamiento de nuestro nuevo producto y elaboraremos un plan para asegurar el éxito del lanzamiento.',
+            summary:
+              'El objetivo es planificar el lanzamiento del nuevo producto y elaborar un plan para asegurar el éxito del lanzamiento.',
+            commitments: [
+              {
+                assigned_to: 'Sofia',
+                asignament:
+                  'Me comprometo a elaborar una estrategia de marketing para el lanzamiento del producto.',
+              },
+              {
+                assigned_to: 'John',
+                asignament:
+                  'Me comprometo a coordinar con el equipo de ventas para asegurarnos de que el producto llegue a los clientes potenciales.',
+              },
+              {
+                assigned_to: 'Lucas',
+                asignament:
+                  'Me comprometo a establecer un plan de seguimiento paraa segurarnos de que el producto esté funcionando correctamente y a recopilar comentarios de los clientes para hacer mejoras si es necesario.',
+              },
+            ],
+            transcription: [
+              {
+                minute: 1,
+                speaker: 'Karen',
+                speak:
+                  'Hola a todos, gracias por asistir a esta reunión. Hoy discutiremos los detalles del lanzamiento de nuestro nuevo producto y elaboraremos un plan para asegurar el éxito del lanzamiento.',
+              },
+              {
+                minute: 3,
+                speaker: 'Sofia',
+                speak:
+                  'Propongo que empecemos por elaborar una estrategia de marketing para el lanzamiento del producto.',
+              },
+              {
+                minute: 5,
+                speaker: 'John',
+                speak:
+                  'Estoy de acuerdo con Sofia. También deberíamos coordinar con el equipo de ventas para asegurarnos de que el producto llegue a los clientes potenciales.',
+              },
+              {
+                minute: 8,
+                speaker: 'Lucas',
+                speak:
+                  'Además, deberíamos establecer un plan de seguimiento para asegurarnos de que el producto esté funcionando correctamente y recopilar comentarios de los clientes para hacer mejoras si es necesario.',
+              },
+              {
+                minute: 10,
+                speaker: 'Karen',
+                speak:
+                  'Perfecto, tenemos nuestras tareas definidas. ¿Alguien tiene algo más que agregar antes de terminar la reunión?',
+              },
+            ],
+          },
+          {
+            organizer: 'Ana',
+            start_Time: '3:00 PM',
+            end_Time: '4:00 PM',
+            date: 'Wednesday November 1, 2028',
+            participants: ['Ana', 'Carlos', 'Marta', 'Pablo'],
+            objective: ['Discutir el presupuesto para el próximo trimestre'],
+            description:
+              'En esta reunión, discutiremos el presupuesto para el próximo trimestre y tomaremos decisiones sobre la asignación de recursos para maximizar la eficiencia y la rentabilidad de la empresa.',
+            summary:
+              'El objetivo es discutir el presupuesto para el próximo trimestre y tomar decisiones sobre la asignación de recursos para maximizar la eficiencia y la rentabilidad de la empresa.',
+            commitments: [
+              {
+                assigned_to: 'Carlos',
+                asignament:
+                  'Me comprometo a revisar los gastos del trimestre anterior y hacer recomendaciones sobre cómo podemos reducir costos.',
+              },
+              {
+                assigned_to: 'Marta',
+                asignament:
+                  'Me comprometo a analizar los ingresos y proponer nuevas oportunidades de negocio para aumentar los ingresos.',
+              },
+              {
+                assigned_to: 'Pablo',
+                asignament:
+                  'Me comprometo a revisar los planes de inversión y hacer recomendaciones sobre cómo podemos maximizar el retorno de inversión.',
+              },
+            ],
+            transcription: [
+              {
+                minute: 1,
+                speaker: 'Ana',
+                speak:
+                  'Hola a todos, gracias por asistir a esta reunión. Hoy discutiremos el presupuesto para el próximo trimestre y tomaremos decisiones sobre la asignación de recursos para maximizar la eficiencia y la rentabilidad de la empresa.',
+              },
+              {
+                minute: 3,
+                speaker: 'Carlos',
+                speak:
+                  'Propongo que empecemos por revisar los gastos del trimestre anterior y hacer recomendaciones sobre cómo podemos reducir costos.',
+              },
+            ],
+          },
         ],
       };
+
+      this.today.setHours(0, 0, 0, 0);
+      this.tomorrow.setHours(0, 0, 0, 0);
       this.res.meetings.forEach((meet: any) => {
         let dateString = meet.date;
         let dateParts = dateString.split(' ');
         let month = dateParts[1].replace(',', '');
         let day = dateParts[2];
         let year = dateParts[3];
-
         let dateForm = new Date(`${month} ${day}, ${year}`);
         meet.dateFormate = dateForm;
-
+        meet.dateFormate.setHours(0, 0, 0, 0);
+        if (meet.dateFormate.getTime() == this.today.getTime()) {
+          meet.validationDate = 'Today:';
+        } else if (meet.dateFormate.getTime() == this.tomorrow.getTime()) {
+          meet.validationDate = 'Tomorrow:';
+        } else if (meet.dateFormate.getTime() > this.tomorrow.getTime()) {
+          meet.validationDate = meet.date;
+        } else {
+          meet.validationDate = null;
+        }
         console.log(
-          'igual hoy: ',
-          meet.dateFormate.getTime() == this.today.getTime()
-        );
-        console.log(
-          'igual mañana: ',
-          meet.dateFormate.getTime() == this.tomorrow.getTime()
-        );
-        console.log(
-          'mayor hoy: ',
-          meet.dateFormate.getTime() > this.tomorrow.getTime()
+          'Fechas: ',
+          meet.validationDate,
+          '/ Hoy: ',
+          this.today,
+          '/ Mañana: ',
+          this.tomorrow,
+          '/ otra data: ',
+          meet.dateFormate
         );
       });
     }
