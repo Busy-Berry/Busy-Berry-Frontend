@@ -53,52 +53,75 @@ export class homeComponent implements OnInit {
         participationAvgCompany: 32,
         meetings: [
           {
-            organizer: 'Juan',
-            start_Time: '9:00 AM',
-            end_Time: '10:00 AM',
-            date: 'Sunday Februry 28, 2025',
-            participants: ['Juan', 'Maria', 'pedro'],
-            objective: ['Mejorar la calidad de atención al cliente'],
+            organizer: 'Speaker 2',
+            start_Time: '11:00 AM',
+            end_Time: '1:00 PM',
+            date: 'Thursday May 04, 2023',
+            participants: ['Speaker 1', 'Speaker 2'],
+            objective: [
+              'Probar el bot, la demo y el flujo de trabajo de la aplicación, corregir problemas relacionados con la entrada del bot en las sesiones y completar el despliegue serverless.',
+            ],
             description:
-              'Se busca mejorar la calidad de atención al cliente mediante la capacitación del personal y la implementación de nuevas herramientas tecnológicas.',
+              'Durante la sesión, se discutió la necesidad de probar el funcionamiento del bot, la demo y el flujo de trabajo de la aplicación. Se mencionó que el bot debería estar grabando la sesión y se planteó la corrección de un problema en el que el bot no siempre entra a las sesiones. Además, se habló sobre la finalización del despliegue serverless y el trabajo de Guillermo en las pantallas de la aplicación.',
             summary:
-              'El objetivo es mejorar la calidad de atención al cliente a través de la capacitación y la implementación de herramientas tecnológicas.',
+              'La sesión se centró en probar el bot y la demo, así como en corregir problemas relacionados con su funcionamiento. Se mencionó la necesidad de completar el despliegue serverless y se asignaron responsabilidades para resolver los problemas identificados.',
             commitments: [
               {
-                assigned_to: 'María',
+                assigned_to: 'Speaker 2',
                 asignament:
-                  'Nos comprometemos a capacitar a nuestro personal en técnicas de atención al cliente y a implementar nuevas herramientas tecnológicas para mejorar la eficiencia y la satisfacción del cliente.',
+                  'Se compromete a hacer que el bot funcione en modo headless para facilitar la implementación serverless.',
               },
               {
-                assigned_to: 'Juan',
+                assigned_to: 'Speaker 2',
                 asignament:
-                  'Nos comprometemos a revisar el feedback proporcionado por los usuarios y hacer un resumen puntual donde se exprese lo mas preocupante de nuestro equipo',
+                  'Se compromete a preparar la función Lambda utilizando la documentación proporcionada para el despliegue serverless.',
+              },
+              {
+                assigned_to: 'Speaker 2',
+                asignament:
+                  'Espera que al hacer headless la versión de Selenium mencionada en la documentación, el problema de resolución se reduzca.',
+              },
+              {
+                assigned_to: 'Speaker 1',
+                asignament:
+                  'Menciona que con la documentación proporcionada, la aplicación debería funcionar una vez realizadas las pruebas con el despliegue serverless.',
               },
             ],
             transcription: [
               {
-                minute: 1,
-                speaker: 'Juan',
+                minute: '0',
+                speaker: 'Speaker 1',
                 speak:
-                  'Buenos días a todos, hoy nos reunimos para discutir cómo mejorar la calidad de atención al cliente.',
+                  'Perfecto, ahí se unió el bot. Bueno, el objetivo de esta sesión es probar el bot, probar la demo y todo el flujo de trabajo de la aplicación. En principio, si todo está marchando bien, el bot debería estar grabando la sesión. Luego deberíamos poder ver el resultado de la sesión en la aplicación. Hay que corregir ciertas cosas, como lo de que el bot no siempre entra a las sesiones. Y hay que terminar de hacer el despliegue serverless. Guillermo está trabajando en las pantallas. Entonces, pues nosotros tenemos que solucionar lo del bot. Vale, lo que está ocurriendo con el bot y me he estado dando cuenta, es que hay algo que quedó oprimido o en el momento en el que la pestaña no es la principal del computador y no tiene la ',
               },
               {
-                minute: 3,
-                speaker: 'María',
+                minute: '1:05',
+                speaker: 'Speaker 2',
                 speak:
-                  'Propongo que empecemos por capacitar a nuestro personal en técnicas de atención al cliente.',
+                  'resolución correcta cuando se inicia, falla. Entonces me comprometo yo a hacer que esto esté funcionando de modo headless para poder hacer la implementación serverless mucho más sencilla.',
               },
               {
-                minute: 5,
-                speaker: 'Pedro',
+                minute: '1:18',
+                speaker: 'Speaker 1',
                 speak:
-                  'Estoy de acuerdo con María, pero también deberíamos implementar nuevas herramientas tecnológicas para mejorar la eficiencia.',
+                  'Bueno, de hecho ahí tiene algo y es que cuando lo pongamos en la implementación serverless, pues la resolución deja de existir per se. Entonces tendríamos que más bien hacer las pruebas con el despliegue serverless. Yo le pasé ahí la documentación que podemos utilizar para desplegar esto en Lambda. Y ya con eso estaría funcionando la aplicación. Ok, entonces con la documentación que me has dado',
               },
               {
-                minute: 8,
-                speaker: 'Juan',
+                minute: '1:44',
+                speaker: 'Speaker 2',
                 speak:
-                  'Me parece una buena idea. ¿Alguien tiene alguna sugerencia específica?',
+                  'empezaré a prepararlo, bueno, ver la función Lambda principalmente. Y después entonces, como esto es algo de resolución que está ocurriendo, voy a esperar que esto falle mucho menos cuando esté',
+              },
+              {
+                minute: '1:58',
+                speaker: 'Speaker 1',
+                speak:
+                  'haciendo headless la versión de Selenium que me habías mandado la documentación. Perfecto. Yo creo que ya podemos dejar aquí la prueba. Ok, y eso voy a dar la señal de visiBerry para que se salga y ',
+              },
+              {
+                minute: '2:13',
+                speaker: 'Speaker 2',
+                speak: 'déjela grabar.',
               },
             ],
           },
