@@ -11,6 +11,8 @@ import { homeComponent } from './Home/home';
 import { NgChartsModule } from 'ng2-charts';
 import { AnilloComponent } from './Graph/Ring/graph_ring';
 import { appComponent } from './app-component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importe el módulo BrowserAnimationsModule
+
 @NgModule({
   declarations: [
     internalMeeting,
@@ -26,6 +28,7 @@ import { appComponent } from './app-component';
     AppRoutingModule,
     NgbDropdownModule,
     NgChartsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [appComponent],

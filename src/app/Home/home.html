@@ -88,7 +88,14 @@
               Upcoming meetings
             </h5>
             <div *ngFor="let meet of res.meetings.slice(0, 4); let i=index">
-              <div *ngIf="meet.validationDate" class="meetSlide">
+              <div
+                *ngIf="meet.validationDate"
+                class="meetSlide"
+                (click)="goToMeeting()"
+                [@hover]="hoverState === i ? 'hovered' : 'normal'"
+                (mouseenter)="setHoverState(i)"
+                (mouseleave)="setHoverState(null)"
+              >
                 <a
                   ><ng-container
                     *ngIf="meet.validationDate != 'Today:' && meet.validationDate != 'Tomorrow:'; else noStyle"

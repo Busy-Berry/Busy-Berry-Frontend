@@ -32,6 +32,10 @@
   padding-right: 20px;
 }
 
+.columnTop a {
+  color: inherit;
+  text-decoration: none;
+}
 .customBox-Top h3 {
   text-align: start;
   color: #a79bf2;
@@ -144,4 +148,9 @@
 .meetSlide {
   margin-top: 10px;
   margin-bottom: 8px;
+}
+
+.meetSlide a {
+  color: inherit;
+  text-decoration: none;
 }

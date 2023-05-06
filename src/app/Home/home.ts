@@ -1,14 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { format } from 'date-fns';
+import { Router } from '@angular/router';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 @Component({
   selector: 'homeComponent',
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
+  animations: [
+    trigger('hover', [
+      state(
+        'normal',
+        style({
+          transform: 'scale(1)',
+        })
+      ),
+      state(
+        'hovered',
+        style({
+          transform: 'scale(1.05)',
+        })
+      ),
+      transition('normal <=> hovered', animate('200ms ease-in-out')),
+    ]),
+  ],
 })
 export class homeComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
   res: any;
   body = { doc_id: 'VlhBY4cBajuGGqRKS88o' };
   chartType: any;
@@ -16,6 +41,7 @@ export class homeComponent implements OnInit {
   chartOptions: any;
   today: Date = new Date();
   tomorrow = new Date(this.today.getTime() + 24 * 60 * 60 * 1000);
+  hoverState: number | null = null;
 
   getDataFromBackend() {
     let params = new HttpParams();
@@ -56,7 +82,7 @@ export class homeComponent implements OnInit {
             organizer: 'Speaker 2',
             start_Time: '11:00 AM',
             end_Time: '1:00 PM',
-            date: 'Thursday May 04, 2023',
+            date: 'Thursday May 07, 2023',
             participants: ['Speaker 1', 'Speaker 2'],
             objective: [
               'Probar el bot, la demo y el flujo de trabajo de la aplicación, corregir problemas relacionados con la entrada del bot en las sesiones y completar el despliegue serverless.',
@@ -380,6 +406,13 @@ export class homeComponent implements OnInit {
         );
       });
     }
+  }
+
+  goToMeeting() {
+    this.router.navigate(['/meeting']);
+  }
+  setHoverState(index: number | null) {
+    this.hoverState = index;
   }
 
   ngOnInit(): void {

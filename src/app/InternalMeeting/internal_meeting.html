@@ -33,7 +33,8 @@
             <h5 class="title-box">Meeting transcript</h5>
             <div class="separate_gion" *ngFor="let phrase of res.transcription">
               <span>
-                Minute {{phrase.minute}} - {{phrase.speaker}}: {{phrase.speak}}
+                <a style="font-weight: bold">Minute {{phrase.minute}}</a> -
+                {{phrase.speaker}}: {{phrase.speak}}
               </span>
             </div>
           </div>
