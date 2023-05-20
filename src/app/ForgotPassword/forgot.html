@@ -1,0 +1,36 @@
+<div
+  class="container-fluid d-flex flex-column justify-content-center align-items-center mt-5"
+>
+  <div class="mainCard shadow-lg d-flex flex-column">
+    <section class="container">
+      <div class="iconCenter"></div>
+    </section>
+    <div
+      class="rounded-circle imgCircle d-flex justify-content-center align-items-center"
+      (click)="goToLogin()"
+    >
+      <img
+        class="iconBanner"
+        src="../../assets/arrow-back.png"
+        alt="Busy-Berry"
+      />
+    </div>
+    <div class="login-container p-4 d-flex flex-column justify-content-center">
+      <h2>Recuperar contraseña</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Nombre de usuario</label>
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            [(ngModel)]="username"
+            name="username"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Recuperar</button>
+      </form>
+    </div>
+  </div>
+</div>
