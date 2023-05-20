@@ -12,6 +12,10 @@ import { NgChartsModule } from 'ng2-charts';
 import { AnilloComponent } from './Graph/Ring/graph_ring';
 import { appComponent } from './app-component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importe el módulo BrowserAnimationsModule
+import { login } from './LogIn/login';
+import { FormsModule } from '@angular/forms';
+import { register } from './Register/register';
+import { forgot } from './ForgotPassword/forgot';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
     homeComponent,
     AnilloComponent,
     appComponent,
+    login,
+    register,
+    forgot,
   ],
   imports: [
     HttpClientModule,
@@ -29,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
     NgbDropdownModule,
     NgChartsModule,
     BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [appComponent],
