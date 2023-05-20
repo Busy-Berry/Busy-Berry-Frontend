@@ -146,24 +146,19 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="genero">Género</label>
-          <select
-            id="genero"
+          <label for="companyID">companyID</label>
+          <input
+            id="companyID"
             class="form-control"
-            [(ngModel)]="genero"
-            name="genero"
+            [(ngModel)]="companyID"
+            name="companyID"
             required
-          >
-            <option value="">Seleccionar género</option>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-            <option value="otro">Otro</option>
-          </select>
+          />
           <div
-            *ngIf="registerForm.get('genero')!.invalid && (registerForm.get('genero')!.dirty || registerForm.get('genero')!.touched)"
+            *ngIf="registerForm.get('companyID')!.invalid && (registerForm.get('companyID')!.dirty || registerForm.get('companyID')!.touched)"
             class="errorsForm"
           >
-            <div *ngIf="registerForm.get('genero')!.errors!['required']">
+            <div *ngIf="registerForm.get('companyID')!.errors!['required']">
               El género es obligatorio.
             </div>
           </div>

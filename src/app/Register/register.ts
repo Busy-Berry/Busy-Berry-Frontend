@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CognitoService, IUser } from '../cognito.service';
 @Component({
   selector: 'register',
   templateUrl: './register.html',
@@ -17,7 +18,8 @@ export class register {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private cognitoService: CognitoService
   ) {
     this.registerForm = this.formBuilder.group({
       username: [
@@ -28,27 +30,21 @@ export class register {
           Validators.maxLength(20),
         ],
       ],
-      password: [
-        '',
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(20),
-      ],
+      password: ['', Validators.required, Validators.minLength(8)],
       confirmPassword: ['', [Validators.required, this.passwordMatchValidator]],
       email: ['', [Validators.required, Validators.email]],
       tel: ['', Validators.required, Validators.min(3000000000)],
-      genero: ['', Validators.required],
+      companyID: ['', Validators.required],
       lenguaje: ['', Validators.required],
     });
   }
 
   // ngOnInit(): void {}
-
   username: string = '';
   password: string = '';
   confirmPassword: string = '';
   lenguaje: string = '';
-  genero: string = '';
+  companyID: string = '';
   tel: number | null = null;
   email: string = '';
 

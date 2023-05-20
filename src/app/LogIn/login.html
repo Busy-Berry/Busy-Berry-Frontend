@@ -18,12 +18,13 @@
       <h2>Iniciar sesión</h2>
       <form (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="username">Usuario</label>
+          <label for="username">Email</label>
           <input
             type="text"
             id="username"
             class="form-control"
-            [(ngModel)]="username"
+            #email="ngModel"
+            [(ngModel)]="user.email"
             name="username"
             required
           />
@@ -34,7 +35,8 @@
             type="password"
             id="password"
             class="form-control"
-            [(ngModel)]="password"
+            #password="ngModel"
+            [(ngModel)]="user.password"
             name="password"
             required
           />

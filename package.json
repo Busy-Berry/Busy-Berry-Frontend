@@ -21,11 +21,13 @@
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@ng-bootstrap/ng-bootstrap": "^14.1.1",
     "@popperjs/core": "^2.11.7",
+    "aws-amplify": "^5.2.2",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.3.0",
     "date-fns": "^2.30.0",
     "ng2-charts": "^4.1.1",
     "rxjs": "~7.8.0",
+    "ts-polyfill": "^3.8.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
