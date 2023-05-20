@@ -4,8 +4,10 @@ import {
   AbstractControl,
   FormBuilder,
   FormGroup,
+  ValidationErrors,
   Validators,
 } from '@angular/forms';
+
 import { Router } from '@angular/router';
 import { CognitoService, IUser } from '../cognito.service';
 @Component({
@@ -15,12 +17,33 @@ import { CognitoService, IUser } from '../cognito.service';
 })
 export class register {
   registerForm: FormGroup;
+  loading: boolean;
+  isConfirm: boolean;
+  user: IUser;
+  // username: string;
+  // password: string;
+  // confirmPassword: string;
+  // lenguaje: string;
+  // companyID: string;
+  // tel: number;
+  // email: string;
+
   constructor(
     private http: HttpClient,
     private router: Router,
     private formBuilder: FormBuilder,
     private cognitoService: CognitoService
   ) {
+    this.loading = false;
+    this.isConfirm = false;
+    this.user = {} as IUser;
+    // this.username = '';
+    // this.password = '';
+    // this.confirmPassword = '';
+    // this.lenguaje = '';
+    // this.companyID = '';
+    // this.tel = NaN;
+    // this.email = '';
     this.registerForm = this.formBuilder.group({
       username: [
         '',
@@ -30,39 +53,46 @@ export class register {
           Validators.maxLength(20),
         ],
       ],
-      password: ['', Validators.required, Validators.minLength(8)],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+
       confirmPassword: ['', [Validators.required, this.passwordMatchValidator]],
       email: ['', [Validators.required, Validators.email]],
-      tel: ['', Validators.required, Validators.min(3000000000)],
+      tel: ['', [Validators.required, Validators.min(3000000000)]],
       companyID: ['', Validators.required],
       lenguaje: ['', Validators.required],
     });
   }
 
-  // ngOnInit(): void {}
-  username: string = '';
-  password: string = '';
-  confirmPassword: string = '';
-  lenguaje: string = '';
-  companyID: string = '';
-  tel: number | null = null;
-  email: string = '';
+  public signUp(): void {
+    this.loading = true;
+    this.cognitoService
+      .signUp(this.user)
+      .then(() => {
+        this.loading = false;
+        this.isConfirm = true;
+        this.router.navigate(['/confirm']);
+      })
+      .catch(() => {
+        this.loading = false;
+      });
+  }
 
+  // ngOnInit(): void {}
   goToLogin() {
     this.router.navigate(['/']);
   }
-
   onSubmit() {
+    console.log(this.registerForm.value);
+    this.user = {
+      password: [this.registerForm.get('password')],
+    };
+
+    console.log(this.user);
     if (this.registerForm.valid) {
-      // Aquí puedes realizar las acciones necesarias al enviar el formulario
-      console.log('Formulario enviado');
-      console.log(this.registerForm.value);
-      this.goToLogin();
+      this.signUp();
     } else {
-      // Marcar los campos como tocados para mostrar los mensajes de validación
       this.markAllFieldsAsTouched();
     }
-    // Aquí puedes agregar la lógica para enviar los datos del formulario al servidor
   }
 
   markAllFieldsAsTouched() {
@@ -72,13 +102,13 @@ export class register {
     });
   }
 
-  passwordMatchValidator(control: AbstractControl) {
+  passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
     if (control != null) {
       const passwordControl = control.get('password');
       const confirmPasswordControl = control.get('confirmPassword');
 
       if (!passwordControl || !confirmPasswordControl) {
-        return null; // No se puede realizar la validación, se asume que es correcto
+        return null;
       }
 
       const password = passwordControl.value;

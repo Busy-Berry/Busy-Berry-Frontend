@@ -10,6 +10,7 @@ import { forgot } from './ForgotPassword/forgot';
 const routes: Routes = [
   { path: '', component: login },
   { path: 'register', component: register },
+  { path: 'confirm', component: register },
   { path: 'forgot', component: forgot },
   { path: 'home', component: homeComponent },
   { path: 'meeting', component: internalMeeting },

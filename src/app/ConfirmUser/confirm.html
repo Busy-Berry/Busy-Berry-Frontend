@@ -1,0 +1,43 @@
+<div
+  class="container-fluid d-flex flex-column justify-content-center align-items-center mt-5"
+>
+  <div class="mainCard shadow-lg d-flex flex-column">
+    <section class="container">
+      <div class="iconCenter"></div>
+    </section>
+    <div
+      class="rounded-circle imgCircle d-flex justify-content-center align-items-center"
+      (click)="goToRegister()"
+    >
+      <img
+        class="iconBanner"
+        src="../../assets/arrow-back.png"
+        alt="Busy-Berry"
+      />
+    </div>
+    <div class="login-container p-4 d-flex flex-column justify-content-center">
+      <h2>confirmación</h2>
+      <form [formGroup]="codeForm" (ngSubmit)="onSubmitCode()">
+        <div class="form-group">
+          <label for="code">Código</label>
+          <input
+            type="text"
+            id="code"
+            class="form-control"
+            formControlName="code"
+            name="code"
+          />
+          <div
+            *ngIf="codeForm.get('username')!.invalid && (codeForm.get('username')!.dirty || codeForm.get('username')!.touched)"
+            class="errorsForm"
+          >
+            <div *ngIf="codeForm.get('username')!.errors!['required']">
+              El nombre de usuario es obligatorio.
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+      </form>
+    </div>
+  </div>
+</div>

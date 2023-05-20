@@ -13,10 +13,10 @@ import { AnilloComponent } from './Graph/Ring/graph_ring';
 import { appComponent } from './app-component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importe el módulo BrowserAnimationsModule
 import { login } from './LogIn/login';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { register } from './Register/register';
 import { forgot } from './ForgotPassword/forgot';
-
+import { confirm } from './ConfirmUser/confirm';
 @NgModule({
   declarations: [
     internalMeeting,
@@ -28,6 +28,7 @@ import { forgot } from './ForgotPassword/forgot';
     login,
     register,
     forgot,
+    confirm,
   ],
   imports: [
     HttpClientModule,
@@ -37,6 +38,7 @@ import { forgot } from './ForgotPassword/forgot';
     NgChartsModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [appComponent],
