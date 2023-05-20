@@ -1,0 +1,202 @@
+<div
+  class="container-fluid d-flex flex-column justify-content-center align-items-center mt-5"
+>
+  <div class="mainCard shadow-lg d-flex flex-column">
+    <section class="container">
+      <div class="iconCenter"></div>
+    </section>
+    <div
+      class="rounded-circle imgCircle d-flex justify-content-center align-items-center"
+      (click)="goToLogin()"
+    >
+      <img
+        class="iconBanner"
+        src="../../assets/arrow-back.png"
+        alt="Busy-Berry"
+      />
+    </div>
+    <div class="login-container p-4 d-flex flex-column justify-content-center">
+      <h2>Registrarse</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Nombre de usuario</label>
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            [(ngModel)]="username"
+            name="username"
+            required
+            minlength="3"
+            maxlength="20"
+          />
+          <div
+            *ngIf="registerForm.get('username')!.invalid && (registerForm.get('username')!.dirty || registerForm.get('username')!.touched)"
+            class="errorsForm"
+          >
+            <div *ngIf="registerForm.get('username')!.errors!['required']">
+              El nombre de usuario es obligatorio.
+            </div>
+            <div *ngIf="registerForm.get('username')!.errors!['minlength']">
+              El nombre de usuario debe tener al menos 3 caracteres.
+            </div>
+            <div *ngIf="registerForm.get('username')!.errors!['maxlength']">
+              El nombre de usuario no puede tener más de 20 caracteres.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Nueva contraseña</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            [(ngModel)]="password"
+            name="password"
+            required
+          />
+          <div
+            *ngIf="registerForm.get('password')!.invalid && (registerForm.get('password')!.dirty || registerForm.get('password')!.touched)"
+            class="errorsForm"
+          >
+            <div *ngIf="registerForm.get('password')!.errors!['required']">
+              La contraseña es obligatoria.
+            </div>
+            <div *ngIf="registerForm.get('password')!.errors!['minlength']">
+              La contraseña debe tener al menos 3 caracteres.
+            </div>
+            <div *ngIf="registerForm.get('password')!.errors!['maxlength']">
+              La contraseña no puede tener más de 20 caracteres.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirmar contraseña</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            class="form-control"
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+          <div
+            *ngIf="registerForm.get('confirmPassword')!.invalid && (registerForm.get('confirmPassword')!.dirty || registerForm.get('confirmPassword')!.touched)"
+            class="errorsForm"
+          >
+            <div
+              *ngIf="registerForm.get('confirmPassword')!.errors!['required']"
+            >
+              La confirmación de contraseña es obligatoria.
+            </div>
+            <div
+              *ngIf="registerForm.get('confirmPassword')!.errors!['minlength']"
+            >
+              La confirmación de contraseña debe tener al menos 3 caracteres.
+            </div>
+            <div
+              *ngIf="registerForm.get('confirmPassword')!.errors!['maxlength']"
+            >
+              La confirmación de contraseña no puede tener más de 20 caracteres.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            [(ngModel)]="email"
+            name="email"
+            required
+          />
+          <div
+            *ngIf="registerForm.get('email')!.invalid && (registerForm.get('email')!.dirty || registerForm.get('email')!.touched)"
+            class="errorsForm"
+          >
+            <div *ngIf="registerForm.get('email')!.errors!['required']">
+              El correo es obligatorio.
+            </div>
+            <div *ngIf="registerForm.get('email')!.errors!['email']">
+              Por favor, introduce un correo válido.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tel">Teléfono</label>
+          <input
+            type="number"
+            id="tel"
+            class="form-control"
+            [(ngModel)]="tel"
+            name="tel"
+            required
+          />
+          <div
+            *ngIf="registerForm.get('tel')!.invalid && (registerForm.get('tel')!.dirty || registerForm.get('tel')!.touched)"
+            class="errorsForm"
+          >
+            <div *ngIf="registerForm.get('tel')!.errors!['required']">
+              El teléfono es obligatorio.
+            </div>
+            <div *ngIf="registerForm.get('tel')!.errors!['min']">
+              El teléfono debe tener al menos 3000000000.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="genero">Género</label>
+          <select
+            id="genero"
+            class="form-control"
+            [(ngModel)]="genero"
+            name="genero"
+            required
+          >
+            <option value="">Seleccionar género</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+          </select>
+          <div
+            *ngIf="registerForm.get('genero')!.invalid && (registerForm.get('genero')!.dirty || registerForm.get('genero')!.touched)"
+            class="errorsForm"
+          >
+            <div *ngIf="registerForm.get('genero')!.errors!['required']">
+              El género es obligatorio.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lenguaje">Idioma</label>
+          <select
+            id="lenguaje"
+            class="form-control"
+            [(ngModel)]="lenguaje"
+            name="lenguaje"
+            required
+          >
+            <option value="">Seleccionar idioma</option>
+            <option value="es">
+              <span class="flag-icon flag-icon-es"></span> Español
+            </option>
+            <option value="en">
+              <span class="flag-icon flag-icon-gb"></span> Inglés
+            </option>
+          </select>
+          <div
+            *ngIf="registerForm.get('lenguaje')!.invalid && (registerForm.get('lenguaje')!.dirty || registerForm.get('lenguaje')!.touched)"
+            class="errorsForm"
+          >
+            <div *ngIf="registerForm.get('lenguaje')!.errors!['required']">
+              El idioma es obligatorio.
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+      </form>
+    </div>
+  </div>
+</div>

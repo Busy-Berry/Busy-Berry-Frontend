@@ -1,0 +1,59 @@
+.container {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  position: relative;
+  background: #a79bf2;
+  height: 8%;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+.mainCard {
+  border-radius: 15px;
+  z-index: 2;
+  width: 450px;
+  height: 92vh;
+}
+.login-container {
+  width: inherit;
+  padding-top: 6vh !important;
+  padding-bottom: 5vh !important;
+  height: inherit;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+}
+
+.iconBanner {
+  z-index: 2;
+  height: 80%;
+  width: 80%;
+  object-fit: contain;
+}
+.imgCircle {
+  background-color: var(--body-bg);
+  position: absolute;
+  top: 15px;
+  margin-left: 10px;
+  z-index: 3;
+  height: 30px;
+  width: 30px;
+}
+
+.errorsForm {
+  color: crimson;
+}
