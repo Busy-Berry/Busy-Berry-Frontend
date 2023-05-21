@@ -17,14 +17,14 @@
     </div>
     <div class="login-container p-4 d-flex flex-column justify-content-center">
       <h2>Registrarse</h2>
-      <form (ngSubmit)="onSubmit()">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="username">Nombre de usuario</label>
           <input
             type="text"
             id="username"
             class="form-control"
-            formControlName="user.username"
+            formControlName="username"
             name="username"
           />
           <div
@@ -48,7 +48,7 @@
             type="password"
             id="password"
             class="form-control"
-            formControlName="user.password"
+            formControlName="password"
             name="password"
             required
           />
@@ -73,7 +73,7 @@
             type="password"
             id="confirmPassword"
             class="form-control"
-            formControlName="user.confirmPassword"
+            formControlName="confirmPassword"
             name="confirmPassword"
             required
           />
@@ -104,7 +104,7 @@
             type="email"
             id="email"
             class="form-control"
-            formControlName="user.email"
+            formControlName="email"
             name="email"
             required
           />
@@ -126,7 +126,7 @@
             type="number"
             id="tel"
             class="form-control"
-            formControlName="user.tel"
+            formControlName="tel"
             name="tel"
             required
           />
@@ -147,7 +147,7 @@
           <input
             id="companyID"
             class="form-control"
-            formControlName="user.companyID"
+            formControlName="companyID"
             name="companyID"
             required
           />
@@ -165,7 +165,7 @@
           <select
             id="lenguaje"
             class="form-control"
-            formControlName="user.lenguaje"
+            formControlName="lenguaje"
             name="lenguaje"
             required
           >

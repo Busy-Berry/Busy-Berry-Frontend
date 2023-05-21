@@ -81,10 +81,15 @@ export class register {
   goToLogin() {
     this.router.navigate(['/']);
   }
+
   onSubmit() {
     console.log(this.registerForm.value);
     this.user = {
-      password: [this.registerForm.get('password')],
+      email: this.registerForm.get('email')!.value,
+      password: this.registerForm.get('password')!.value,
+      code: null,
+      phoneNumber: this.registerForm.get('tel')!.value,
+      nickName: this.registerForm.get('username')!.value,
     };
 
     console.log(this.user);

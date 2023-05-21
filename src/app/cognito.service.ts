@@ -6,9 +6,11 @@ import { BehaviorSubject } from 'rxjs';
 export interface IUser {
   email: string;
   password: string;
-  showPassword: boolean;
-  code: string;
-  name: string;
+  // showPassword: boolean;
+  code: string | null;
+  // name: string;
+  nickName: string;
+  phoneNumber: string;
 }
 
 @Injectable({
@@ -32,11 +34,16 @@ export class CognitoService {
     return Auth.signUp({
       username: user.email,
       password: user.password,
+      attributes: {
+        nickname: user.nickName,
+        // email: user.email,
+        phone_number: user.phoneNumber,
+      },
     });
   }
 
   public confirmSignUp(user: IUser): Promise<any> {
-    return Auth.confirmSignUp(user.email, user.code);
+    return Auth.confirmSignUp(user.email, user.code!);
   }
 
   public signIn(user: IUser): Promise<any> {
