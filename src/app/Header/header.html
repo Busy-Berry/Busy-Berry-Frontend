@@ -1,7 +1,7 @@
 <!-- Main Header -->
-<div class="main-header" id="main-header">
+<div class="main-header" id="main-header{{idHeader}}">
   <div class="d-flex">
-    <div class="mobile-toggle" id="mobile-toggle">
+    <div class="mobile-toggle" [id]="'mobile-toggle' + idHeader">
       <i class="bx bx-menu"></i>
     </div>
     <img class="iconImage" src="../assets/BB_Color.png" alt="Header Avatar" />
@@ -22,13 +22,18 @@
             <div class="row">
               <img
                 class="rounded-circle header-profile-user"
-                src="https://thumbs.dreamstime.com/b/retrato-masculino-del-icono-del-perfil-del-hombre-de-negocios-plano-47075259.jpg"
+                src="https://scontent.fbog4-2.fna.fbcdn.net/v/t39.30808-6/313430572_1463933487436561_500838002051145217_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGCT7-oaXSgosg6vtjMNorPhdnl70r1X-SF2eXvSvVf5GwHxLuh4hJup7_QRCw8rycqj2ygXfSRL7ZLJ-gV5jwF&_nc_ohc=07wr5fIxQLkAX8ycBc_&_nc_oc=AQlL1M9qKIvTMXZVLLDyTQrxKAU0NmJ18-uOO8lI09CRhpT48qdtpskykb8xlgms4NM&_nc_ht=scontent.fbog4-2.fna&oh=00_AfBHFCYNeA3Eh4bvnTB9On9_txyIGMBNwRXnDcDOrdNT3Q&oe=647E1D07"
                 alt="Header Avatar"
               />
+              <!-- <img
+                class="rounded-circle header-profile-user"
+                src="https://thumbs.dreamstime.com/b/retrato-masculino-del-icono-del-perfil-del-hombre-de-negocios-plano-47075259.jpg"
+                alt="Header Avatar"
+              /> -->
 
               <div class="col">
-                <div>Randy Riley</div>
-                <div>randy.riley@gmail.com</div>
+                <div>Juan Montoya</div>
+                <div>juanjmontoya14@gmail.com</div>
               </div>
             </div>
 

@@ -1,0 +1,121 @@
+<header idHeader="Search"></header>
+<sidebar idSidebar="Search"></sidebar>
+<div class="main" id="main-contentSearch">
+  <div class="main-content user">
+    <div class="main_row">
+      <div class="col-9 col-xl-12 main_column">
+        <!-- Card section: -->
+        <!-- Card component -->
+        <div class="box card-box mb-20">
+          <!-- custom box, box with border -->
+          <div class="customBox">
+            <h5 class="title-box">Meeting Title</h5>
+            <h4>Main Objectives:</h4>
+          </div>
+          <!-- END custom box, box with border -->
+          <div class="customBox"></div>
+          <div class="customBox"></div>
+          <div class="customBox">
+            <h5 class="title-box">Meeting transcript</h5>
+          </div>
+        </div>
+        <!-- End card component -->
+        <!-- END Card section: -->
+      </div>
+      <!-- CardLateral -->
+      <div class="box card_lateral">
+        <h5 class="title-box">Filters:</h5>
+        <!-- <form class="row row-cols-sm-auto">
+          <div class="col-12">
+            <div class="input-group inputText">
+              <label for="initDate">Initial Date</label>
+              <input
+                id="initDate"
+                class="form-control"
+                placeholder="yyyy-mm-dd"
+                name="dp"
+                [(ngModel)]="model"
+                ngbDatepicker
+                #d="ngbDatepicker"
+              />
+              <button
+                class="btn btn-outline-secondary bi bi-calendar3"
+                (click)="d.toggle()"
+                type="button"
+              ></button>
+            </div>
+          </div>
+        </form> -->
+
+        <!-- !  -->
+        <form class="row row-cols-sm-auto">
+          <div class="col-12">
+            <div class="input-group">
+              <label for="inputInitDate">Start Date:</label>
+
+              <input
+                id="inputInitDate"
+                class="form-control"
+                placeholder="yyyy-mm-dd"
+                name="inputInitDate"
+                [(ngModel)]="model"
+                [dayTemplate]="t"
+                [displayMonths]="1"
+                ngbDatepicker
+                #d1="ngbDatepicker"
+              />
+              <button
+                class="btn btn-outline-secondary bi bi-calendar3"
+                (click)="d1.toggle()"
+                type="button"
+              ></button>
+              <ng-template #t let-date let-focused="focused">
+                <span
+                  class="custom-day"
+                  [class.focused]="focused"
+                  [class.faded]="isHovered(date)"
+                  (mouseleave)="hoveredDate = null"
+                >
+                  {{ date.day }}
+                </span>
+              </ng-template>
+            </div>
+            <div class="input-group">
+              <label for="inputFinalDate">End Date:</label>
+              <input
+                id="inputFinalDate"
+                class="form-control"
+                placeholder="yyyy-mm-dd"
+                name="inputFinalDate"
+                [(ngModel)]="model2"
+                ngbDatepicker
+                [dayTemplate]="t"
+                #d2="ngbDatepicker"
+              />
+              <button
+                class="btn btn-outline-secondary bi bi-calendar3"
+                (click)="d2.toggle()"
+                type="button"
+              ></button>
+            </div>
+            <div class="input-group">
+              <label for="selectOrganizer">Organizer</label>
+              <button id="selectOrganizer" (click)="openModal()">SELECT</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- !  -->
+
+        <h3>Participants:</h3>
+        <ul>
+          <li>user</li>
+        </ul>
+      </div>
+      <!-- End CardLateral -->
+    </div>
+  </div>
+</div>
+<!-- END MAIN CONTENT -->
+
+<div class="overlay"></div>

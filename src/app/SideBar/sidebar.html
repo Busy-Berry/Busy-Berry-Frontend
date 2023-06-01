@@ -1,118 +1,78 @@
 <!-- SIDEBAR -->
-<div class="sidebar sidebar-hidden" id="sidebar-container">
+<div class="sidebar sidebar-hidden" id="sidebar-container{{idSidebar}}">
   <div class="sidebar-logo">
     <a href="index.html">
       <img src="../../assets/logoH.png" alt="Protend logo" class="image-Logo" />
     </a>
-    <div class="sidebar-close" id="sidebar-close">
+    <div class="sidebar-close" id="sidebar-close{{idSidebar}}">
       <i class="bx bx-left-arrow-alt"></i>
     </div>
   </div>
   <!-- SIDEBAR MENU -->
-  <div class="simlebar-sc" data-simplebar>
+  <div class="simlebar-sc" data-simplezas>
+    <button
+      class="btn buttonSidebar"
+      *ngIf="!isRecording"
+      (click)="onStartRecord()"
+      data-toggle="modal"
+      data-target="#myModal"
+    >
+      Let's take notes!
+    </button>
+    <button
+      class="btn buttonSidebarNot"
+      *ngIf="isRecording"
+      (click)="onStopRecord()"
+    >
+      stop taking notes
+    </button>
+    <!-- inpuyt -->
+    <div
+      *ngIf="!isRecording"
+      style="width: calc(100% - 50px); margin-right: 25px; margin-left: 25px"
+    >
+      <form [formGroup]="meeting" (ngSubmit)="onStartRecord()">
+        <div class="form-group">
+          <label for="url">Url meet a unirse</label>
+          <input
+            type="text"
+            id="url"
+            class="form-control"
+            formControlName="url"
+            name="url"
+          />
+        </div>
+      </form>
+    </div>
     <ul class="sidebar-menu tf">
-      <li class="sidebar-submenu">
-        <a href="index.html" class="sidebar-menu-dropdown current-menu-item">
-          <i class="bx bxs-home"></i>
-          <span>Dashboard</span>
-          <div class="dropdown-icon">
-            <i class="bx bx-chevron-down"></i>
-          </div>
-        </a>
-        <ul class="sidebar-menu sidebar-menu-dropdown-content active">
-          <li>
-            <a href="index.html"> Dashboard </a>
-          </li>
-          <li>
-            <a href="user-profile.html"> User Profile </a>
-          </li>
-          <li>
-            <a href="user-login.html"> User Login </a>
-          </li>
-          <li>
-            <a href="new-account.html"> New Account </a>
-          </li>
-        </ul>
-      </li>
-      <li class="sidebar-submenu">
-        <a href="project.html" class="sidebar-menu-dropdown">
-          <i class="bx bxs-bolt"></i>
-          <span>Project</span>
-          <div class="dropdown-icon">
-            <i class="bx bx-chevron-down"></i>
-          </div>
-        </a>
-        <ul class="sidebar-menu sidebar-menu-dropdown-content">
-          <li>
-            <a href="project.html"> Project </a>
-          </li>
-          <li>
-            <a href="project-details.html"> Project Details </a>
-          </li>
-          <li>
-            <a href="new-project.html"> New Project </a>
-          </li>
-        </ul>
-      </li>
-
-      <li class="sidebar-submenu">
-        <a href="clients.html" class="sidebar-menu-dropdown">
-          <i class="bx bxs-user"></i>
-          <span>Client</span>
-          <div class="dropdown-icon">
-            <i class="bx bx-chevron-down"></i>
-          </div>
-        </a>
-        <ul class="sidebar-menu sidebar-menu-dropdown-content">
-          <li>
-            <a href="clients.html"> Manager Client </a>
-          </li>
-          <li>
-            <a href="client-details.html"> Client Details </a>
-          </li>
-        </ul>
-      </li>
       <li>
-        <a href="board.html">
-          <i class="bx bxs-dashboard"></i>
-          <span>Board</span>
+        <a (click)="goToHome()">
+          <i class="bx bx-home"></i>
+          <span>Home</span>
         </a>
       </li>
       <li>
-        <a href="calendar.html">
+        <a (click)="goToSearch()">
+          <i class="bx bx-search"></i>
+          <span>Search Historical</span>
+        </a>
+      </li>
+      <li>
+        <a (click)="goToStats()">
+          <i class="bx bx-stats"></i>
+          <span>Statistics</span>
+        </a>
+      </li>
+      <li>
+        <a (click)="goToCalendar()">
           <i class="bx bx-calendar"></i>
           <span>Calendar</span>
         </a>
       </li>
-
-      <li>
-        <a href="message.html">
-          <i class="bx bxs-message-rounded-detail"></i>
-          <span>Message</span>
-        </a>
-      </li>
-      <li class="sidebar-submenu">
-        <a href="chart-apex.html" class="sidebar-menu-dropdown">
-          <i class="bx bxs-component"></i>
-          <span>Components</span>
-          <div class="dropdown-icon">
-            <i class="bx bx-chevron-down"></i>
-          </div>
-        </a>
-        <ul class="sidebar-menu sidebar-menu-dropdown-content">
-          <li>
-            <a href="chart-apex.html"> Apex Charts </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
-          <div>
-            <i class="bx bx-cog mr-10"></i>
-            <span>darkmode</span>
-          </div>
-
-          <span class="darkmode-switch"></span>
+      <li (click)="goToSettings()">
+        <a>
+          <i class="bx bx-cog"></i>
+          <span>Settings</span>
         </a>
       </li>
     </ul>

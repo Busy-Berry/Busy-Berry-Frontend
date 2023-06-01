@@ -1,8 +1,8 @@
-<header></header>
-<sidebar></sidebar>
+<header idHeader="Internal"></header>
+<sidebar idSidebar="Internal"></sidebar>
 
 <!-- MAIN CONTENT -->
-<div class="main" id="main-content">
+<div class="main" id="main-contentInternal">
   <div class="main-content user">
     <div class="main_row" *ngIf="res != null">
       <div class="col-9 col-xl-12 main_column">
@@ -13,9 +13,9 @@
           <div class="customBox" *ngIf="res.objective != null">
             <h5 class="title-box">Meeting Title</h5>
             <h4>Main Objectives:</h4>
-            <h2 *ngFor="let objective of res.objective">{{objective}}</h2>
+            <h2>{{res.objective}}</h2>
             <h4>Description:</h4>
-            <p>{{res.objective}}</p>
+            <p>{{res.description}}</p>
           </div>
           <!-- END custom box, box with border -->
           <div class="customBox" *ngIf="res.summary != null">

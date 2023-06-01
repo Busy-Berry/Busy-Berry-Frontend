@@ -13,3 +13,20 @@
   width: 90%;
   padding: 3px;
 }
+
+.buttonSidebar {
+  background-color: #897afb;
+  color: var(--box-bg);
+  width: calc(100% - 50px);
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+.buttonSidebarNot {
+  background-color: transparent;
+  border: 1px solid #897afb;
+  color: #897afb;
+  width: calc(100% - 50px);
+  margin-right: 25px;
+  margin-left: 25px;
+}
