@@ -10,11 +10,11 @@
   border-radius: 15px;
   z-index: 2;
   width: 450px;
-  height: 92vh;
+  height: 85vh;
 }
 .login-container {
   width: inherit;
-  padding-top: 6vh !important;
+  padding-top: 28vh !important;
   padding-bottom: 5vh !important;
   height: inherit;
   border-bottom-right-radius: 15px;
@@ -22,7 +22,8 @@
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
   z-index: 2;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
+  /* overflow: hidden; */
 }
 
 .form-group {

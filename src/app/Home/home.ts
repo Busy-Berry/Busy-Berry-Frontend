@@ -94,7 +94,7 @@ export class homeComponent implements OnInit {
 
       this.today.setHours(0, 0, 0, 0);
       this.tomorrow.setHours(0, 0, 0, 0);
-      this.res.meetings.forEach((meet: any) => {
+      this.res.meetings!.forEach((meet: any) => {
         let dateString = meet._source.date;
         let dateParts = dateString.split(' ');
         let month = dateParts[1].replace(',', '');
