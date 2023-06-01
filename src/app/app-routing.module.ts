@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'forgot', component: forgot },
   { path: 'home', component: homeComponent },
   { path: 'search', component: searchScreenComponent },
-  { path: 'meeting', component: internalMeeting },
+  { path: 'meeting/:id', component: internalMeeting },
   { path: 'config', component: internalMeeting },
   { path: 'calendar', component: internalMeeting },
   { path: 'stats', component: internalMeeting },

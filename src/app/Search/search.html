@@ -9,43 +9,45 @@
         <div class="box card-box mb-20">
           <!-- custom box, box with border -->
           <div class="customBox">
-            <h5 class="title-box">Meeting Title</h5>
-            <h4>Main Objectives:</h4>
-          </div>
-          <!-- END custom box, box with border -->
-          <div class="customBox"></div>
-          <div class="customBox"></div>
-          <div class="customBox">
-            <h5 class="title-box">Meeting transcript</h5>
+            <ng-container
+              *ngIf="res.meetings && res.meetings.length; else noValidMeet"
+            >
+              <div *ngFor="let meet of res.meetings; let i=index">
+                <div
+                  class="meetSlide"
+                  (click)="goToMeetingByID(meet._id)"
+                  [@hover]="hoverState === i ? 'hovered' : 'normal'"
+                  (mouseenter)="setHoverState(i)"
+                  (mouseleave)="setHoverState(null)"
+                >
+                  <span>
+                    {{meet._source.date}}<br />
+                    {{meet._source.organizer}}<br />
+                    {{meet._source.start_Time}} - {{meet._source.end_Time}}<br />
+                  </span>
+                  <span *ngFor="let participants of meet._source.participants">
+                    {{participants}}<br />
+                  </span>
+                </div>
+                <ng-container *ngIf="i < res.meetings.length"
+                  ><hr
+                /></ng-container>
+              </div>
+            </ng-container>
+            <ng-template #noValidMeet>
+              <a style="color: #94a5dc"
+                >There are no upcoming meetings scheduled</a
+              >
+            </ng-template>
           </div>
         </div>
+
         <!-- End card component -->
         <!-- END Card section: -->
       </div>
       <!-- CardLateral -->
-      <div class="box card_lateral">
+      <div class="box card_lateral" *ngIf="false">
         <h5 class="title-box">Filters:</h5>
-        <!-- <form class="row row-cols-sm-auto">
-          <div class="col-12">
-            <div class="input-group inputText">
-              <label for="initDate">Initial Date</label>
-              <input
-                id="initDate"
-                class="form-control"
-                placeholder="yyyy-mm-dd"
-                name="dp"
-                [(ngModel)]="model"
-                ngbDatepicker
-                #d="ngbDatepicker"
-              />
-              <button
-                class="btn btn-outline-secondary bi bi-calendar3"
-                (click)="d.toggle()"
-                type="button"
-              ></button>
-            </div>
-          </div>
-        </form> -->
 
         <!-- !  -->
         <form class="row row-cols-sm-auto">
